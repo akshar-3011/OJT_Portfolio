@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">News placeholder image</title>
+  <desc id="desc">A simple placeholder graphic for news articles without images.</desc>
+  <rect width="640" height="360" fill="#eef1f5"/>
+  <rect x="88" y="92" width="464" height="176" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="6"/>
+  <rect x="132" y="132" width="196" height="18" rx="9" fill="#94a3b8"/>
+  <rect x="132" y="174" width="376" height="14" rx="7" fill="#cbd5e1"/>
+  <rect x="132" y="208" width="300" height="14" rx="7" fill="#cbd5e1"/>
+  <circle cx="464" cy="142" r="34" fill="#2563eb"/>
+</svg>

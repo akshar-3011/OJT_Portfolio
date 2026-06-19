@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CodeWire Studio — portfolio showcasing GlobalWire and web projects." />
+  <title>CodeWire Studio — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script>
+    (function () {
+      if (localStorage.getItem('portfolioTheme') !== 'light') {
+        document.body.classList.add('theme-dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="app">
+    <aside id="sidebar" class="sidebar" aria-expanded="true">
+      <div class="sidebar__head">
+        <img src="../assets/logo.svg" alt="" width="28" height="28" />
+        <div>
+          <strong id="agency-name">CodeWire</strong>
+          <span id="agency-tagline">Studio</span>
+        </div>
+        <button id="sidebar-close" class="icon-btn" type="button" aria-label="Close sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+      <nav id="sidebar-nav" class="sidebar__nav" aria-label="Portfolio"></nav>
+      <div class="sidebar__foot">
+        <span>College Project Portfolio</span>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar__left">
+          <button id="sidebar-open" class="icon-btn" type="button" aria-label="Open sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <h1 class="title">
+            <span class="title__serif" id="title-part-1">CodeWire</span>
+            <span class="title__bold" id="title-part-2">Studio.</span>
+          </h1>
+        </div>
+        <button id="theme-toggle" class="icon-btn theme-btn" type="button" aria-label="Toggle theme">
+          <svg class="theme-btn__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+          <svg class="theme-btn__moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg>
+        </button>
+      </header>
+
+      <main class="content">
+        <section id="view-home" class="view view--active">
+          <div class="hero">
+            <p class="eyebrow">Welcome</p>
+            <h2>We build products that feel fast, clean, and professional.</h2>
+            <p id="hero-desc" class="hero__desc"></p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary">View Projects</a>
+              <a href="../index.html" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Open GlobalWire</a>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>1</strong><span>Featured App</span></div>
+            <div class="stat"><strong>16+</strong><span>News Categories</span></div>
+            <div class="stat"><strong>100%</strong><span>Vanilla JS</span></div>
+          </div>
+        </section>
+
+        <section id="view-projects" class="view">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <p>Shipped builds from our studio. GlobalWire is the flagship product.</p>
+          </div>
+          <div id="projects-grid" class="grid"></div>
+        </section>
+
+        <section id="view-team" class="view">
+          <div class="section-head">
+            <h2>Team</h2>
+            <p>Edit team profiles in <code>portfolio/js/data.js</code>.</p>
+          </div>
+          <div id="team-grid" class="grid"></div>
+        </section>
+
+        <section id="view-globalwire" class="view view--frame">
+          <iframe src="../index.html" title="GlobalWire" class="app-frame"></iframe>
+        </section>
+
+        <section id="view-contact" class="view">
+          <div class="contact-wrap">
+            <div class="section-head">
+              <h2>Contact</h2>
+              <p>Interested in collaborating? Send us a message.</p>
+            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="you@email.com" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary">Send Message</button>
+              <p id="form-success" class="form-success" hidden>Message sent successfully.</p>
+            </form>
+            <p class="contact-mail">Or email us at <a id="contact-email" href="mailto:hello@codewire.dev">hello@codewire.dev</a></p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
