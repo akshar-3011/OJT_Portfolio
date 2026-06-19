@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Developer Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scanline-overlay" aria-hidden="true"></div>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-glyph">&gt;_</span>
+        <span class="brand-text">GitHub<span class="brand-accent">explorer</span></span>
+      </div>
+      <p class="brand-tagline">// look up any GitHub user</p>
+    </div>
+  </header>
+
+  <main class="app-main">
+
+    <section class="search-section" id="searchSection">
+      <form id="searchForm" class="search-form" autocomplete="off">
+        <label for="usernameInput" class="search-label">$ git user search</label>
+        <div class="search-row">
+          <span class="search-prompt">~/users/</span>
+          <input
+            type="text"
+            id="usernameInput"
+            class="search-input"
+            placeholder="octocat"
+            aria-label="GitHub username"
+          >
+          <button type="submit" class="search-button" id="searchButton">
+            <span class="btn-label">run</span>
+          </button>
+        </div>
+        <p class="search-hint" id="searchHint">Try: torvalds, gaearon, sindresorhus</p>
+      </form>
+
+      <div class="rate-limit-strip" id="rateLimitStrip">
+        <span class="rate-dot" id="rateDot"></span>
+        <span id="rateLimitText">checking rate limit&hellip;</span>
+      </div>
+    </section>
+
+    <section class="status-section" id="statusSection" hidden>
+      <div class="status-card" id="statusCard">
+        <p class="status-message" id="statusMessage"></p>
+      </div>
+    </section>
+
+    <section class="profile-section" id="profileSection" hidden>
+      <div class="profile-card">
+        <img id="profileAvatar" class="profile-avatar" alt="">
+        <div class="profile-info">
+          <h2 class="profile-name" id="profileName"></h2>
+          <p class="profile-login" id="profileLogin"></p>
+          <p class="profile-bio" id="profileBio"></p>
+
+          <div class="profile-meta" id="profileMeta"></div>
+
+          <a id="profileLink" class="profile-link" target="_blank" rel="noopener">
+            view on github &rarr;
+          </a>
+        </div>
+        <div class="profile-stats" id="profileStats"></div>
+      </div>
+    </section>
+
+    <section class="lang-section" id="langSection" hidden>
+      <div class="section-heading">
+        <h3>// language breakdown</h3>
+        <span class="section-sub">counted across all public repos</span>
+      </div>
+      <div class="lang-table-wrap">
+        <table class="lang-table" id="langTable">
+          <thead>
+            <tr>
+              <th>language</th>
+              <th>repos</th>
+              <th>share</th>
+            </tr>
+          </thead>
+          <tbody id="langTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="repos-section" id="reposSection" hidden>
+      <div class="section-heading">
+        <h3>// repositories</h3>
+        <div class="sort-controls">
+          <label for="sortSelect" class="sort-label">sort by</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="updated">last updated</option>
+            <option value="stars">stars</option>
+            <option value="name">name</option>
+            <option value="forks">forks</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="repo-grid" id="repoGrid"></div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>data via the GitHub REST API &middot; unauthenticated &middot; 60 req/hr</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
