@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: system-ui, sans-serif;
+    background-color: #000000;
+    color: #eaeaea;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    background: #000000;
+}
+
+nav .left {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #222222;
+    color: #eaeaea;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.board {
+    display: flex;
+    gap: 30px;
+    padding: 15px 30px;
+    flex-grow: 1;
+}
+
+.task-column {
+    flex: 1;
+    background-color: #222222;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Border highlighting style during active drag-overs */
+.task-column.hover-over {
+    border: 2px dashed #eaeaea;
+    transform: scale(1.01);
+}
+
+.task-column .heading {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.task {
+    background-color: #111111;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: grab;
+}
+
+.task h2 { font-size: 16px; }
+.task p { font-size: 14px; color: #aaa; }
+
+.task button.delete-btn {
+    align-self: flex-end;
+    background-color: #c92a2a;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* Modal styling structure */
+.model {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.model.active { display: flex; }
+
+.model-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.center {
+    position: relative;
+    background: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px;
+}
+
+.center input, .center textarea {
+    background: #000000;
+    color: #eaeaea;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    resize: none;
+}
