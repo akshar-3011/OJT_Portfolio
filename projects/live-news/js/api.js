@@ -1,4 +1,3 @@
-
 const NEWS_API = 'https://newsapi.org/v2';
 const PROXY = '/api/news';
 const CACHE_MS = 30 * 60 * 1000;
@@ -27,7 +26,7 @@ async function requestNews(endpoint, params = {}) {
 
   let url;
   if (isLocal()) {
-    const { API_KEY } = await import('./config.js').catch(() => ({ API_KEY: '' }));
+    const { API_KEY } = await import('./config.js');
     const direct = new URL(`${NEWS_API}/${endpoint}`);
     direct.searchParams.set('apiKey', API_KEY);
     Object.entries(query).forEach(([key, value]) => {
