@@ -1,0 +1,117 @@
+/* Hero */
+.hero {
+    background: var(--surface-color);
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    width: 70%;
+    font-size: 18px;
+    color: var(--text-light);
+    line-height: 30px;
+}
+
+/* Statistics Card */
+.stat-card {
+    background: var(--surface-color);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+/* Team Card */
+.member-card {
+    background: var(--surface-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.member-card p {
+    font-size: 15px;
+    color: var(--text-light);
+}
+
+/* Project Card */
+.project-card {
+    background: var(--surface-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+/* Project Button */
+.project-card button {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: rgba(255, 255, 255, 1);
+    border-radius: var(--border-radius);
+    font-size: 15px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.project-card button:hover {
+    background: var(--primary-hover);
+}
+
+/* Statistics Icon */
+.stat-card svg {
+    width: 34px;
+    height: 34px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}

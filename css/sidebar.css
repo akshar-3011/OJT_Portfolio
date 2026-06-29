@@ -1,0 +1,93 @@
+/* Sidebar */
+.sidebar {
+    background: var(--sidebar-color);
+    color: rgba(255, 255, 255, 1);
+    padding: 30px 20px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Navigation */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Navigation Button */
+.nav-btn {
+    width: 100%;
+    padding: 15px 18px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border-radius: var(--border-radius);
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+/* Hover */
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Active */
+.nav-btn.active {
+    background: var(--primary-color);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Icons */
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Theme Button */
+.theme-btn {
+    width: 100%;
+    margin-top: 40px;
+
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: var(--border-radius);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+/* Theme Button Hover */
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}

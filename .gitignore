@@ -1,6 +1,0 @@
-.DS_Store
-.env
-.env.local
-.vercel
-live-newz/js/config.js
-node_modules/
