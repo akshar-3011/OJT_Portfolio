@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Capstone Portfolio</title>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>🚀 JS Portfolio</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <button class="nav-btn active" data-page="dashboard" aria-label="Dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                    Dashboard
+                </button>
+                <button class="nav-btn" data-page="quiz" aria-label="Quiz App">
+                    <i data-lucide="circle-help"></i>
+                    Quiz App
+                </button>
+                <button class="nav-btn" data-page="expense" aria-label="Expense Tracker">
+                    <i data-lucide="wallet"></i>
+                    Expense Tracker
+                </button>
+                <button class="nav-btn" data-page="news" aria-label="Live News">
+                    <i data-lucide="newspaper"></i>
+                    Live News
+                </button>
+                <button class="nav-btn" data-page="github" aria-label="GitHub Explorer">
+                    <i data-lucide="github"></i>
+                    GitHub Explorer
+                </button>
+                <button class="nav-btn" data-page="kanban" aria-label="Kanban Board">
+                    <i data-lucide="kanban-square"></i>
+                    Kanban Board
+                </button>
+            </nav>
+
+            <button id="themeBtn" class="theme-btn" aria-label="Toggle Theme">
+                <i data-lucide="moon"></i>
+                Dark Mode
+            </button>
+
+        </aside>
+
+        <!-- Main -->
+
+        <main class="main-content">
+
+            <section id="dashboard-page">
+
+            <!-- Hero -->
+
+            <section class="hero">
+                <h1>JavaScript Capstone Portfolio</h1>
+                <p>
+                    A collection of interactive web applications
+                    developed using HTML, CSS and JavaScript.
+                </p>
+            </section>
+
+            <!-- Statistics -->
+
+            <section class="stats">
+                <div class="stat-card">
+                    <i data-lucide="folder-open"></i>
+                    <h2>5</h2>
+                    <p>Projects</p>
+                </div>
+
+                <div class="stat-card">
+                    <i data-lucide="users"></i>
+                    <h2>5</h2>
+                    <p>Team Members</p>
+                </div>
+
+                <div class="stat-card">
+                    <i data-lucide="monitor"></i>
+                    <h2>HTML</h2>
+                    <p>CSS & JavaScript</p>
+                </div>
+
+                <div class="stat-card">
+                    <i data-lucide="cloud-upload"></i>
+                    <h2>Vercel</h2>
+                    <p>Deployment</p>
+                </div>
+            </section>
+
+            <!-- Team -->
+
+            <section>
+
+                <h2 class="section-title">
+                    Team Members
+                </h2>
+
+                <div class="team-grid">
+                    <div class="member-card">
+                        <h3>Akshar Dhakad</h3>
+                        <p>Portfolio Integration</p>
+                    </div>
+                    <div class="member-card">
+                        <h3>Chetan R</h3>
+                        <p>Quiz App</p>
+                    </div>
+
+                    <div class="member-card">
+                        <h3>Vikash Kumar</h3>
+                        <p>Expense Tracker</p>
+                    </div>
+
+                    <div class="member-card">
+                        <h3>Omkar Shewale</h3>
+                        <p>Live News</p>
+                    </div>
+
+                    <div class="member-card">
+                        <h3>Vishesh Singh</h3>
+                        <p>Kanban Board</p>
+                    </div>
+
+                    <div class="member-card">
+                        <h3>Anish Rai</h3>
+                        <p>GitHhub Explorer</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Projects -->
+
+            <section>
+
+                <h2 class="section-title"> Projects </h2>
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+                        <h3>Quiz App</h3>
+                        <p>Interactive MCQ Application</p>
+                        <button data-page="quiz">Open Project</button>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Expense Tracker</h3>
+                        <p>Income & Expense Management</p>
+                        <button data-page="expense">Open Project</button>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Live News</h3>
+                        <p>News API Integration</p>
+                        <button data-page="news">Open Project</button>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>GitHub Explorer</h3>
+                        <p>Developer Profile Search</p>
+                        <button data-page="github">Open Project</button>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Kanban Board</h3>
+                        <p>Task Management Board</p>
+                        <button data-page="kanban">Open Project</button>
+                    </div>
+
+                </div>
+
+            </section>
+            
+            </section>
+
+            <div id="project-header" style="display: none;">
+                <h2 id="project-title"></h2>
+                <p id="project-desc"></p>
+            </div>
+            <iframe id="project-frame" title="Project Display" aria-label="Project View" loading="lazy"></iframe>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/theme.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
