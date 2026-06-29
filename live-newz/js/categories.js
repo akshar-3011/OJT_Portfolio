@@ -4,7 +4,7 @@ export const MAIN_NAV = [
   { id: 'bookmarks', label: 'Bookmarks', type: 'bookmarks' },
 ];
 
-export const QUICK_CATEGORIES = [
+const CATEGORIES = [
   { label: 'All', type: 'category', value: 'general', color: 'default' },
   { label: 'Politics', type: 'category', value: 'general', color: 'politics' },
   { label: 'Finance', type: 'category', value: 'business', color: 'finance' },
@@ -23,8 +23,8 @@ export const QUICK_CATEGORIES = [
   { label: 'Crypto', type: 'category', value: 'business', color: 'finance' },
 ];
 
-function toSidebarItem(cat) {
-  const id = `cat-${cat.label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`;
+function toNavItem(cat) {
+  const id = `cat-${cat.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
   return { id, label: cat.label, type: cat.type, value: cat.value, color: cat.color };
 }
 
@@ -32,23 +32,17 @@ export const SIDEBAR_DROPDOWNS = [
   {
     id: 'categories',
     label: 'Categories',
-    items: QUICK_CATEGORIES.map(toSidebarItem),
+    items: CATEGORIES.map(toNavItem),
   },
   {
     id: 'explore',
     label: 'Explore',
-    items: [
-      { id: 'settings', label: 'Settings', type: 'settings' },
-    ],
+    items: [{ id: 'settings', label: 'Settings', type: 'settings' }],
   },
 ];
 
 export function getAllNavItems() {
-  const items = [...MAIN_NAV];
-  SIDEBAR_DROPDOWNS.forEach((section) => {
-    items.push(...section.items);
-  });
-  return items;
+  return [...MAIN_NAV, ...SIDEBAR_DROPDOWNS.flatMap((s) => s.items)];
 }
 
 export const HOME_SECTIONS = [
@@ -61,6 +55,5 @@ export const HOME_SECTIONS = [
 export const TRENDING_TOPICS = ['AI', 'Bitcoin', 'India', 'Tesla', 'Israel', 'NASA'];
 
 export const TRUSTED_SOURCES = [
-  'BBC', 'CNN', 'Reuters', 'The New York Times', 'The Washington Post',
-  'Associated Press', 'Bloomberg', 'The Guardian', 'NPR', 'Al Jazeera',
+  'BBC', 'CNN', 'Reuters', 'The New York Times', 'Bloomberg', 'The Guardian',
 ];

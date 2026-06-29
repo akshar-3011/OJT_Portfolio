@@ -161,20 +161,9 @@ export function getState() {
 export function setState(partial) {
   state = { ...state, ...partial };
 
-  if (
-    Object.prototype.hasOwnProperty.call(partial, 'currentNavId')
-    || Object.prototype.hasOwnProperty.call(partial, 'currentCategory')
-    || Object.prototype.hasOwnProperty.call(partial, 'currentCountry')
-    || Object.prototype.hasOwnProperty.call(partial, 'searchQuery')
-  ) {
+  if ('currentNavId' in partial || 'currentCategory' in partial || 'currentCountry' in partial || 'searchQuery' in partial) {
     savePreferences(state);
   }
 
-  return getState();
-}
-
-export function resetState() {
-  state = { ...initialState, articles: [] };
-  localStorage.removeItem(PREFERENCES_KEY);
   return getState();
 }

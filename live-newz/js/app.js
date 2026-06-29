@@ -1,5 +1,5 @@
 import { fetchBySearch, fetchTopHeadlines } from './api.js';
-import { HOME_SECTIONS, MAIN_NAV, SIDEBAR_DROPDOWNS, TRENDING_TOPICS, TRUSTED_SOURCES, getAllNavItems } from './categories.js';
+import { HOME_SECTIONS, MAIN_NAV, SIDEBAR_DROPDOWNS, TRENDING_TOPICS, getAllNavItems } from './categories.js';
 import {
   addRecentSearch,
   getBookmarks,
@@ -236,13 +236,6 @@ function buildSidebar() {
   });
 }
 
-function appendText(parent, tag, text, className) {
-  const el = document.createElement(tag);
-  if (className) el.className = className;
-  el.textContent = text;
-  parent.appendChild(el);
-}
-
 function toggleSidebar(open) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
@@ -457,20 +450,7 @@ async function loadNews() {
 }
 
 function toggleThemeMode() {
-  const next = getTheme() === 'dark' ? 'light' : 'dark';
-  setTheme(next);
-}
-
-function buildFooter() {
-  const container = document.getElementById('footer-sources');
-  if (!container) return;
-
-  TRUSTED_SOURCES.slice(0, 8).forEach((source) => {
-    const tag = document.createElement('span');
-    tag.className = 'footer__tag';
-    tag.textContent = source;
-    container.appendChild(tag);
-  });
+  setTheme(getTheme() === 'dark' ? 'light' : 'dark');
 }
 
 function setupEventListeners() {
@@ -515,7 +495,6 @@ function setupEventListeners() {
 function initializeApp() {
   initTheme();
   buildSidebar();
-  buildFooter();
 
   const input = document.getElementById('search-input');
   if (input) input.value = getState().searchQuery;
