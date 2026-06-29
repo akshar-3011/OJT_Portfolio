@@ -11,17 +11,17 @@ const projects = {
     expense: {
         title: "Expense Tracker",
         description: "Income & Expense Management",
-        path: "projects/Expence Tracker/index.html"
+        path: "projects/expense-tracker/index.html"
     },
     news: {
         title: "Live News",
         description: "News API Integration",
-        path: "projects/live-newz/index.html"
+        path: "projects/live-news/index.html"
     },
     github: {
         title: "GitHub Explorer",
         description: "Developer Profile Search",
-        path: "projects/GitHub_Dev_explorer/index.html"
+        path: "projects/github-dev-explorer/index.html"
     },
     kanban: {
         title: "Kanban Board",
