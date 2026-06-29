@@ -1,10 +1,6 @@
-/* ============================================
-   GitHub Developer Explorer
-   Built using only: fetch, async/await, JSON,
-   basic DOM methods, and basic Array methods
-   (map, filter, reduce, sort, find, forEach).
-   No classes, no destructuring, no optional chaining.
-   ============================================ */
+// GitHub Developer Explorer
+// Built using only basic native JS methods (fetch, DOM, arrays).
+// No classes, no destructuring, no optional chaining.
 
 // ---- Element references (querySelector) ----
 var searchForm = document.querySelector("#searchForm");
@@ -95,9 +91,7 @@ function formatDate(isoString) {
   return year + "-" + month + "-" + day;
 }
 
-/* ============================================
-   STATUS HELPERS
-   ============================================ */
+// STATUS HELPERS
 function showStatus(message, type) {
   statusSection.hidden = false;
   statusMessage.textContent = message;
@@ -120,24 +114,10 @@ function hideResults() {
   reposSection.hidden = true;
 }
 
-/* ============================================
-   RATE LIMIT DISPLAY
-
-   Important: GitHub counts a request against your hourly
-   limit the moment you make it — even a request to
-   /rate_limit itself. So we do NOT poll /rate_limit after
-   every search (that would silently burn one extra request
-   per search on top of the profile + repos calls).
-
-   Instead, every fetch() response from GitHub already
-   includes the current count in its headers:
-     x-ratelimit-remaining
-     x-ratelimit-limit
-   We just read those off the SAME response we already
-   fetched, for free, and use updateRateLimitDisplay() to
-   show them. /rate_limit is only called once, on page load,
-   since there's no earlier response to read headers from yet.
-   ============================================ */
+// RATE LIMIT DISPLAY
+// GitHub counts a request against your hourly limit the moment you make it.
+// We read x-ratelimit-remaining and x-ratelimit-limit headers from fetched responses.
+// /rate_limit is only called once on page load.
 function updateRateLimitDisplay(response) {
   var remainingHeader = response.headers.get("x-ratelimit-remaining");
   var limitHeader = response.headers.get("x-ratelimit-limit");
@@ -181,10 +161,8 @@ async function checkRateLimitOnLoad() {
   }
 }
 
-/* ============================================
-   FETCH USER PROFILE
-   GET https://api.github.com/users/{username}
-   ============================================ */
+// FETCH USER PROFILE
+// GET https://api.github.com/users/{username}
 async function fetchUserProfile(username) {
   var response = await fetch("https://api.github.com/users/" + username);
 
@@ -208,10 +186,8 @@ async function fetchUserProfile(username) {
   return data;
 }
 
-/* ============================================
-   FETCH USER REPOS
-   GET https://api.github.com/users/{username}/repos
-   ============================================ */
+// FETCH USER REPOS
+// GET https://api.github.com/users/{username}/repos
 async function fetchUserRepos(username) {
   var url = "https://api.github.com/users/" + username + "/repos?per_page=100&sort=updated";
   var response = await fetch(url);
@@ -232,9 +208,7 @@ async function fetchUserRepos(username) {
   return data;
 }
 
-/* ============================================
-   RENDER: PROFILE
-   ============================================ */
+// RENDER: PROFILE
 function renderProfile(user) {
   profileAvatar.setAttribute("src", user.avatar_url);
   profileAvatar.setAttribute("alt", user.login + " avatar");
@@ -295,10 +269,8 @@ function renderProfile(user) {
   profileSection.hidden = false;
 }
 
-/* ============================================
-   RENDER: LANGUAGE BREAKDOWN TABLE
-   Uses reduce() to count, then map-like forEach to render.
-   ============================================ */
+// RENDER: LANGUAGE BREAKDOWN TABLE
+// Uses reduce() to count, then map-like forEach to render.
 function renderLanguageBreakdown(repos) {
   // Count repos per language using reduce()
   var counts = repos.reduce(function (acc, repo) {
@@ -391,11 +363,9 @@ function renderLanguageBreakdown(repos) {
   langSection.hidden = false;
 }
 
-/* ============================================
-   RENDER: REPO DIFFSTAT (signature element)
-   A small two-segment bar that fakes a git diffstat
-   line using stars vs forks as the two "segments".
-   ============================================ */
+// RENDER: REPO DIFFSTAT (signature element)
+// A small two-segment bar that fakes a git diffstat
+// line using stars vs forks as the two "segments".
 function buildDiffstatBar(repo) {
   var wrap = document.createElement("div");
   wrap.classList.add("repo-diffstat");
@@ -439,9 +409,7 @@ function buildDiffstatBar(repo) {
   return wrap;
 }
 
-/* ============================================
-   RENDER: REPO CARD
-   ============================================ */
+// RENDER: REPO CARD
 function buildRepoCard(repo) {
   var card = document.createElement("div");
   card.classList.add("repo-card");
@@ -503,9 +471,7 @@ function buildRepoCard(repo) {
   return card;
 }
 
-/* ============================================
-   RENDER: REPO GRID (respects current sort)
-   ============================================ */
+// RENDER: REPO GRID (respects current sort)
 function renderRepoGrid() {
   var sortBy = sortSelect.value;
   var sorted = currentRepos.slice(); // copy so original order is preserved
@@ -549,9 +515,7 @@ function renderRepoGrid() {
   });
 }
 
-/* ============================================
-   MAIN SEARCH HANDLER
-   ============================================ */
+// MAIN SEARCH HANDLER
 async function handleSearch(username) {
   hideResults();
 
@@ -609,9 +573,7 @@ async function handleSearch(username) {
   }
 }
 
-/* ============================================
-   EVENT LISTENERS
-   ============================================ */
+// EVENT LISTENERS
 searchForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -630,7 +592,5 @@ sortSelect.addEventListener("change", function () {
   renderRepoGrid();
 });
 
-/* ============================================
-   INITIAL LOAD
-   ============================================ */
+// INITIAL LOAD
 checkRateLimitOnLoad();

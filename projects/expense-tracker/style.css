@@ -1,0 +1,87 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(244, 247, 251, 1);
+    min-height: 100vh;
+    color: rgba(31, 41, 55, 1);
+}
+
+/* Card Styling */
+.glass-card {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 14px;
+    border: 1px solid rgba(229, 231, 235, 1);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Form Controls Styling */
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(229, 231, 235, 1);
+    border-radius: 14px;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
+    border-color: rgba(37, 99, 235, 1);
+}
+
+/* Button Overrides */
+.btn-primary {
+    background-color: rgba(37, 99, 235, 1);
+    border-color: rgba(37, 99, 235, 1);
+    border-radius: 14px;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: rgba(29, 78, 216, 1);
+    border-color: rgba(29, 78, 216, 1);
+}
+
+/* Custom List Item Styling */
+.transaction-item {
+    background: rgb(255, 255, 255);
+    border-radius: 8px !important;
+    margin-bottom: 10px;
+    border-left: 5px solid rgb(204, 204, 204);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.2s ease;
+}
+
+.transaction-item:hover {
+    transform: scale(1.01);
+}
+
+/* Income / Expense borders */
+.border-left-success { border-left: 5px solid rgb(25, 135, 84) !important; }
+.border-left-danger { border-left: 5px solid rgb(220, 53, 69) !important; }
+
+/* shadow-text class removed */
+
+/* Action Buttons within list */
+.action-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 17.6px;
+    margin-left: 10px;
+    opacity: 0.7;
+}
+
+.action-btn:hover {
+    opacity: 1;
+}
+
+.edit-btn { color: rgb(13, 110, 253); }
+.delete-btn { color: rgb(220, 53, 69); }

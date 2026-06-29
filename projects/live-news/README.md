@@ -1,4 +1,4 @@
-# GlobalWire (Live-NEWZ)
+# GlobalWire (Live-NEWS)
 
 Real-time news web app — college project.
 
@@ -22,14 +22,14 @@ api/news.js       → Vercel serverless proxy (hides API key)
 ## Vercel deploy
 
 1. Push code to GitHub
-2. Import on [vercel.com](https://vercel.com) — set **Root Directory** to `live-newz`
+2. Import on [vercel.com](https://vercel.com) — set **Root Directory** to `live-news`
 3. Add env variable: `NEWS_API_KEY` = your News API key
 4. Deploy
 
 ## Local run
 
 ```bash
-cd live-newz
+cd live-news
 cp js/config.example.js js/config.js   # add your key
 npm run dev
 ```

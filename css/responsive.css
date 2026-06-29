@@ -1,0 +1,109 @@
+/* Laptop */
+@media (max-width: 1200px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero p {
+        width: 90%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 25px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .logo h2 {
+        font-size: 24px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .sidebar nav {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .theme-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+}

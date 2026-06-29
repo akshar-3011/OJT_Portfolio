@@ -44,6 +44,7 @@
 
 /* Project Header */
 #project-header {
+    display: none;
     margin-bottom: 20px;
     padding: 25px;
     background: var(--surface-color);

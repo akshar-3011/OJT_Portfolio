@@ -1,16 +1,16 @@
 :root {
-    --primary-color: #4F46E5;
-    --primary-hover: #4338CA;
-    --bg-color: #F3F4F6;
-    --card-bg: #FFFFFF;
-    --text-main: #111827;
-    --text-muted: #6B7280;
-    --success-color: #10B981;
-    --error-color: #EF4444;
-    --border-color: #E5E7EB;
-    --focus-ring: rgba(79, 70, 229, 0.5);
-    --border-radius: 12px;
-    --transition: all 0.2s ease-in-out;
+    --primary-color: rgba(37, 99, 235, 1);
+    --primary-hover: rgba(29, 78, 216, 1);
+    --bg-color: rgba(244, 247, 251, 1);
+    --card-bg: rgba(255, 255, 255, 1);
+    --text-main: rgba(31, 41, 55, 1);
+    --text-muted: rgba(107, 114, 128, 1);
+    --success-color: rgba(34, 197, 94, 1);
+    --error-color: rgba(239, 68, 68, 1);
+    --border-color: rgba(229, 231, 235, 1);
+    --focus-ring: rgba(37, 99, 235, 0.25);
+    --border-radius: 14px;
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -20,26 +20,26 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 1rem;
+    padding: 16px;
 }
 
 /* Typography */
-h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--text-main); }
-h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-main); }
-p { color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
+h1 { font-size: 32px; margin-bottom: 16px; color: var(--text-main); }
+h2 { font-size: 24px; margin-bottom: 24px; color: var(--text-main); }
+p { color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
 
 /* Layout & Containers */
 .app-container {
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
     width: 100%;
     max-width: 600px;
     overflow: hidden;
@@ -49,7 +49,7 @@ p { color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
 
 .screen {
     display: none;
-    padding: 2rem;
+    padding: 32px;
     animation: fadeIn 0.4s ease forwards;
 }
 
@@ -65,11 +65,11 @@ p { color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
 /* Buttons */
 button {
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 12px 24px;
     border: none;
-    border-radius: 8px;
+    border-radius: 14px;
     cursor: pointer;
     transition: var(--transition);
     min-height: 44px; /* Touch target size */
@@ -101,7 +101,7 @@ button:focus-visible {
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .secondary-btn:hover {
@@ -111,13 +111,13 @@ button:focus-visible {
 
 /* Quiz Header & Progress */
 .quiz-header {
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 
 .progress-text {
-    font-size: 0.875rem;
+    font-size: 14px;
     color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     font-weight: 500;
 }
 
@@ -139,8 +139,8 @@ button:focus-visible {
 .options-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
+    gap: 12px;
+    margin-bottom: 32px;
 }
 
 .option-btn {
@@ -148,7 +148,7 @@ button:focus-visible {
     border: 2px solid var(--border-color);
     color: var(--text-main);
     text-align: left;
-    padding: 1rem;
+    padding: 16px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -156,12 +156,12 @@ button:focus-visible {
 
 .option-btn:hover:not(:disabled) {
     border-color: var(--primary-color);
-    background-color: rgba(79, 70, 229, 0.02);
+    background-color: rgba(37, 99, 235, 0.02);
 }
 
 .option-btn.selected {
     border-color: var(--primary-color);
-    background-color: rgba(79, 70, 229, 0.05);
+    background-color: rgba(37, 99, 235, 0.05);
 }
 
 .option-btn.correct {
@@ -182,14 +182,14 @@ button:focus-visible {
 }
 
 .score-display {
-    font-size: 4rem;
+    font-size: 64px;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 1rem 0;
+    margin: 16px 0;
 }
 
 .score-breakdown {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -197,28 +197,28 @@ button:focus-visible {
 .review-list {
     max-height: 60vh;
     overflow-y: auto;
-    margin-bottom: 1.5rem;
-    padding-right: 0.5rem;
+    margin-bottom: 24px;
+    padding-right: 8px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .review-item {
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 1rem;
+    padding: 16px;
     text-align: left;
 }
 
 .review-question {
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 .review-answer {
-    font-size: 0.875rem;
-    margin-bottom: 0.25rem;
+    font-size: 14px;
+    margin-bottom: 4px;
 }
 
 .review-answer span {
@@ -231,19 +231,19 @@ button:focus-visible {
 /* Responsive */
 @media (min-width: 768px) {
     .app-container {
-        padding: 1rem;
+    padding: 16px;
     }
     
     .screen {
-        padding: 3rem;
+    padding: 48px;
     }
 
     .results-actions {
-        display: flex;
-        gap: 1rem;
+    display: flex;
+    gap: 16px;
     }
     
     .results-actions button {
-        margin-bottom: 0;
+    margin-bottom: 0;
     }
 }
