@@ -69,3 +69,4 @@ export function fetchBySearch(query, page = 1) {
   });
 }
 
+
