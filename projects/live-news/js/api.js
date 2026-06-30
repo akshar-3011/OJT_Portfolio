@@ -68,3 +68,4 @@ export function fetchBySearch(query, page = 1) {
     page,
   });
 }
+
