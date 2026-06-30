@@ -3,8 +3,8 @@
     background: var(--surface-color);
     padding: 40px;
     margin-bottom: 50px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .hero h1 {
@@ -20,18 +20,20 @@
     line-height: 30px;
 }
 
-/* Statistics Card */
+/* Stat card — left accent stripe */
 .stat-card {
     background: var(--surface-color);
     padding: 30px 20px;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--primary-color);
     transition: var(--transition);
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
+    border-left-color: var(--primary-hover);
+    background: rgba(37, 99, 235, 0.04);
 }
 
 .stat-card h2 {
@@ -45,17 +47,18 @@
     color: var(--text-light);
 }
 
-/* Team Card */
+/* Team card — border emphasis on hover */
 .member-card {
     background: var(--surface-color);
     padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .member-card:hover {
-    transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .member-card h3 {
@@ -68,17 +71,18 @@
     color: var(--text-light);
 }
 
-/* Project Card */
+/* Project card — background shift on hover */
 .project-card {
     background: var(--surface-color);
     padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    border-radius: 14px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    background: rgba(37, 99, 235, 0.04);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {

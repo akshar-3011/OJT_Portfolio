@@ -28,6 +28,12 @@
         justify-content: center;
     }
 
+    .nav-btn.active {
+        border-left: none;
+        border-bottom: 3px solid var(--primary-color);
+        border-radius: 16px;
+    }
+
     .main-content {
         width: 100%;
         padding: 30px;
@@ -87,6 +93,12 @@
 @media (max-width: 480px) {
     .sidebar nav {
         flex-direction: column;
+    }
+
+    .nav-btn.active {
+        border-bottom: none;
+        border-left: 3px solid var(--primary-color);
+        border-radius: 0px 16px 16px 0px;
     }
 
     .nav-btn {
