@@ -3,4 +3,4 @@
 .env.local
 .vercel
 node_modules/
-projects/live-newz/js/config.js
+projects/live-news/js/config.js

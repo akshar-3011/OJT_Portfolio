@@ -1,6 +1,5 @@
 // GitHub Developer Explorer
-// Built using only basic native JS methods (fetch, DOM, arrays).
-// No classes, no destructuring, no optional chaining.
+// Fetches profile data and repos from the GitHub REST API.
 
 // ---- Element references (querySelector) ----
 var searchForm = document.querySelector("#searchForm");
